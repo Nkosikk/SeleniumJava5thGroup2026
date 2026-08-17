@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.Test;
 
 public class BrowserFactory {
 
@@ -23,6 +25,11 @@ public class BrowserFactory {
         driver.manage().window().maximize();
         driver.get(url);
         return driver;
+    }
+
+    @Test
+    public void testBrowser(){
+        launchBrowser("kjojoijojlojoik","https://ndosisimplifiedautomation.vercel.app/");
     }
 
 
