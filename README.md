@@ -2,5 +2,10 @@
 This is the framework for selenium java
 
 ## Software used or reuired
-* Intellij
+* Intellij-
   * Comminity edition
+
+## Dependencies required
+* Maven
+* selenium
+* testng
