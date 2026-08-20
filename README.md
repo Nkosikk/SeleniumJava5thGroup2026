@@ -9,3 +9,6 @@ This is the framework for selenium java
 * Maven
 * selenium
 * testng
+* ----a 
+this is normal text
+* 
