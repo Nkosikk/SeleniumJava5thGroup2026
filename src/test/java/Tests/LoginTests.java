@@ -22,4 +22,9 @@ public class LoginTests extends base{
         loginPage.enterPassword("@12345678");
     }
 
+    @Test(priority = 3)
+    public void clickLoginSubmitButton(){
+        loginPage.clickLoginSubmitButton();
+    }
+
 }
