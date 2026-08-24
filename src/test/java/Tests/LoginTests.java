@@ -10,13 +10,16 @@ public class LoginTests extends base{
         homePage.clickLoginButton();
     }
 
-    @Test
+    @Test(priority = 1)
     public void enterUsernameTests(){
         loginPage.enterUsername("njceles@gmail.com");
     }
 
-    //ToDo - Implement tests for entering password and clicking the login button
+    //ToDo - Implement tests for clicking the login button
 
-
+    @Test(priority = 2)
+    public void enterPassword(){
+        loginPage.enterPassword("@12345678");
+    }
 
 }
