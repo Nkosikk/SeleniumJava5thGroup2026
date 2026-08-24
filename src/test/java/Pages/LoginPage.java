@@ -11,6 +11,9 @@ public class LoginPage {
     @FindBy(id = "login-email")
     WebElement usernameField;
 
+    @FindBy(id = "login-password")
+    WebElement passwordField;
+
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -19,7 +22,12 @@ public class LoginPage {
         usernameField.sendKeys(username);
     }
 
-    // ToDo - Implement methods for entering password and clicking the login button
+    // ToDo - Implement methods clicking the login button
 
+
+    public void enterPassword(String password){
+        passwordField.sendKeys(password);
+
+    }
 
 }
