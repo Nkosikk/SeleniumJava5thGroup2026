@@ -7,6 +7,7 @@ public class LoginTests extends base{
 
     @Test
     public void clickLoginButton() throws InterruptedException {
+        takesScreenshots.takesSnapShot(driver,"landing page");
         homePage.clickLoginButton();
     }
 
@@ -20,11 +21,14 @@ public class LoginTests extends base{
     @Test(priority = 2)
     public void enterPassword(){
         loginPage.enterPassword("@12345678");
+        takesScreenshots.takesSnapShot(driver,"login page");
     }
 
     @Test(priority = 3)
-    public void clickLoginSubmitButton(){
+    public void clickLoginSubmitButton() throws InterruptedException {
         loginPage.clickLoginSubmitButton();
+        Thread.sleep(2000);
+        takesScreenshots.takesSnapShot(driver,"dashboard page");
     }
 
 }
