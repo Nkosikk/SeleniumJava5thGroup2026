@@ -19,5 +19,7 @@ public class LoginPage {
         usernameField.sendKeys(username);
     }
 
+    // ToDo - Implement methods for entering password and clicking the login button
+
 
 }

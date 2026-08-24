@@ -14,4 +14,9 @@ public class LoginTests extends base{
     public void enterUsernameTests(){
         loginPage.enterUsername("njceles@gmail.com");
     }
+
+    //ToDo - Implement tests for entering password and clicking the login button
+
+
+
 }
