@@ -8,20 +8,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HomePage {
+public class LandingPage {
 
     WebDriver driver;
 
-    @FindBy(xpath = "//span[text()='Login']")
-    WebElement loginButton;
+    @FindBy(xpath = "//span[normalize-space()='My Learning']")
+    WebElement myLearningTab;
 
-    public HomePage(WebDriver driver) {
+    public LandingPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void clickLoginButton() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(loginButton));
-        loginButton.click();
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(myLearningTab));
+        myLearningTab.isDisplayed();
     }
 
 
