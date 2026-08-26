@@ -24,7 +24,7 @@ public class WebAutomationAdvanceTest {
     @Test
     public void AutomateAdvanceWebAutomation() throws InterruptedException {
 
-        BrowserFactory.LaunchBrowser("Edge", "https://ndosisimplifiedautomation.vercel.app/#overview");
+        BrowserFactory.LaunchBrowser("Edge", "https://ndosisimplifiedautomation.vercel.app/");
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -78,7 +78,7 @@ public class WebAutomationAdvanceTest {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='view-history-btn']"))).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='view-invoice-INV-1787591774428']"))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='view-invoice-INV-1787762512891']"))).click();
 
         System.out.println("Advanced Web Automation Test Completed Successfully");
 

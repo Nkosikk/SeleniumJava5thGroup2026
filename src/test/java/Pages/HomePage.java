@@ -15,6 +15,7 @@ public class HomePage {
             By.xpath("//*[@id='app-root']/nav/div[1]/div[3]/button/span[2]");
 
     public void clickLoginButton() {
+
         driver.findElement(loginButton).click();
     }
 }
