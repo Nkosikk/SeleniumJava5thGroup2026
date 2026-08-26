@@ -16,8 +16,6 @@ public class LoginTests extends base{
         loginPage.enterUsername("njceles@gmail.com");
     }
 
-    //ToDo - Implement tests for clicking the login button
-
     @Test(priority = 2)
     public void enterPassword(){
         loginPage.enterPassword("@12345678");

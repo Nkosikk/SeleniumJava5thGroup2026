@@ -24,10 +24,6 @@ public class LoginPage {
     public void enterUsername(String username) {
         usernameField.sendKeys(username);
     }
-
-    // ToDo - Implement methods clicking the login button
-
-
     public void enterPassword(String password){
         passwordField.sendKeys(password);
 
