@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeClass;
 public class base {
     BrowserFactory browserFactory= new BrowserFactory();
 
-    final WebDriver driver = browserFactory.launchBrowser("edge","https://ndosisimplifiedautomation.vercel.app/");
+    final WebDriver driver = browserFactory.launchBrowser("chrome","https://ndosisimplifiedautomation.vercel.app/");
 
     public HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     public LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
