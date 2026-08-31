@@ -4,6 +4,7 @@ import Pages.HomePage;
 import Pages.LandingPage;
 import Pages.LoginPage;
 import Utils.BrowserFactory;
+import Utils.ReadData;
 import Utils.TakesScreenshots;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -11,31 +12,22 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class base {
+    BrowserFactory browserFactory= new BrowserFactory();
 
-    protected WebDriver driver;
-    protected HomePage homePage;
-    protected LoginPage loginPage;
-    protected LandingPage landingPage;
-    protected final TakesScreenshots takesScreenshots = new TakesScreenshots();
+    final WebDriver driver = browserFactory.launchBrowser("edge","https://ndosisimplifiedautomation.vercel.app/");
 
-    @BeforeClass
-    public void setUp() {
-        String browser = System.getProperty("browser", "edge");
-        String url = System.getProperty(
-                "baseUrl",
-                "https://ndosisimplifiedautomation.vercel.app/"
-        );
+    public HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+    public LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+    public TakesScreenshots takesScreenshots = new TakesScreenshots();
+    public LandingPage landingPage = PageFactory.initElements(driver, LandingPage.class);
 
-        driver = BrowserFactory.launchBrowser(browser, url);
-        homePage = PageFactory.initElements(driver, HomePage.class);
-        loginPage = PageFactory.initElements(driver, LoginPage.class);
-        landingPage = PageFactory.initElements(driver, LandingPage.class);
-    }
+    ReadData readData;
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
+    {
+        try {
+            readData = new ReadData();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 }

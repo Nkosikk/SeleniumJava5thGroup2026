@@ -9,41 +9,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserFactory {
-
+    static WebDriver driver;
     public static WebDriver launchBrowser(String browserChoice, String url) {
-        WebDriver driver;
-
-        switch (browserChoice.toLowerCase()) {
-            case "chrome":
-                ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--headless=new",
-                        "--no-sandbox", "--disable-dev-shm-usage", "--window-size=1920,1080"
-                );
-                driver = new ChromeDriver(chromeOptions);
-                break;
-            case "edge":
-                EdgeOptions edgeOptions = new EdgeOptions();
-                edgeOptions.addArguments("--headless=new",
-                        "--no-sandbox", "--disable-dev-shm-usage", "--window-size=1920,1080"
-                );
-                driver = new EdgeDriver(edgeOptions);
-                break;
-            case "firefox":
-                FirefoxOptions firefoxOptions = new FirefoxOptions();
-                firefoxOptions.addArguments("-headless");
-                driver = new FirefoxDriver(firefoxOptions);
-                break;
-            default:
-                throw new IllegalArgumentException("Unsupported browser: " + browserChoice);
+        if (browserChoice.equalsIgnoreCase("ChroMe")) {
+            ChromeOptions options = new ChromeOptions();
+//            options.addArguments("--headless");
+            driver = new ChromeDriver(options);
+        } else if (browserChoice.equalsIgnoreCase("edge")) {
+            EdgeOptions edgeOptions = new EdgeOptions();
+//            edgeOptions.addArguments("--headless");
+            driver = new EdgeDriver(edgeOptions);
+        } else {
+            driver = new FirefoxDriver();
         }
-
-        try {
-            driver.manage().window().maximize();
-            driver.get(url);
-            return driver;
-        } catch (RuntimeException exception) {
-            driver.quit();
-            throw exception;
-        }
+        driver.manage().window().maximize();
+        driver.get(url);
+        return driver;
     }
 }
