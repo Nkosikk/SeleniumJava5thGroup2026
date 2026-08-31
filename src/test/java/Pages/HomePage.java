@@ -20,7 +20,7 @@ public class HomePage {
     }
 
     public void clickLoginButton() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(loginButton));
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(loginButton));
         loginButton.click();
     }
 
