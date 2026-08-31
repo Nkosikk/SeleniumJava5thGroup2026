@@ -16,21 +16,15 @@ public class BrowserFactory {
         switch (browserChoice.toLowerCase()) {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments(
-                        "--headless=new",
-                        "--no-sandbox",
-                        "--disable-dev-shm-usage",
-                        "--window-size=1920,1080"
+                chromeOptions.addArguments("--headless=new",
+                        "--no-sandbox", "--disable-dev-shm-usage", "--window-size=1920,1080"
                 );
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "edge":
                 EdgeOptions edgeOptions = new EdgeOptions();
-                edgeOptions.addArguments(
-                        "--headless=new",
-                        "--no-sandbox",
-                        "--disable-dev-shm-usage",
-                        "--window-size=1920,1080"
+                edgeOptions.addArguments("--headless=new",
+                        "--no-sandbox", "--disable-dev-shm-usage", "--window-size=1920,1080"
                 );
                 driver = new EdgeDriver(edgeOptions);
                 break;

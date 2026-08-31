@@ -20,7 +20,7 @@ public class base {
 
     @BeforeClass
     public void setUp() {
-        String browser = System.getProperty("browser", "chrome");
+        String browser = System.getProperty("browser", "edge");
         String url = System.getProperty(
                 "baseUrl",
                 "https://ndosisimplifiedautomation.vercel.app/"
