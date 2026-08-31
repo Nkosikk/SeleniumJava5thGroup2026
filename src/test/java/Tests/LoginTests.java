@@ -1,6 +1,10 @@
 package Tests;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class LoginTests extends base{
 
@@ -28,5 +32,9 @@ public class LoginTests extends base{
         Thread.sleep(2000);
         takesScreenshots.takesSnapShot(driver,"dashboard page");
     }
-
+    @Test(priority = 4)
+    public void verifyLoginSuccessTest(){
+        landingPage.verifyLoginSuccess();
+        takesScreenshots.takesSnapShot(driver,"Landing page");
+    }
 }

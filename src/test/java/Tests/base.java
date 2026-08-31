@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.HomePage;
+import Pages.LandingPage;
 import Pages.LoginPage;
 import Utils.BrowserFactory;
 import Utils.ReadData;
@@ -17,6 +18,7 @@ public class base {
     public HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     public LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
     public TakesScreenshots takesScreenshots = new TakesScreenshots();
+    public LandingPage landingPage = PageFactory.initElements(driver, LandingPage.class);
 
     ReadData readData;
 

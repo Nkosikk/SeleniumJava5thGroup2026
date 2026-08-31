@@ -19,10 +19,12 @@ public class LandingPage {
         this.driver = driver;
     }
 
-    public void clickLoginButton() {
+    public void verifyLoginSuccess() {
         new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(myLearningTab));
         myLearningTab.isDisplayed();
     }
+
+
 
 
 }
