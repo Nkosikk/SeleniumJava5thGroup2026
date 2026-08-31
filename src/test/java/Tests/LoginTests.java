@@ -1,10 +1,7 @@
 package Tests;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import Utils.ReadData;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class LoginTests extends base{
 
@@ -17,12 +14,12 @@ public class LoginTests extends base{
 
     @Test(priority = 1)
     public void enterUsernameTests(){
-        loginPage.enterUsername(readData.username);
+        loginPage.enterUsername(ReadData.username);
     }
 
     @Test(priority = 2)
     public void enterPassword(){
-        loginPage.enterPassword(readData.password);
+        loginPage.enterPassword(ReadData.password);
         takesScreenshots.takesSnapShot(driver,"login page");
     }
 
