@@ -14,8 +14,14 @@ public class HomePage {
     private By loginButton =
             By.xpath("//*[@id='app-root']/nav/div[1]/div[3]/button/span[2]");
 
-    public void clickLoginButton() {
+    private By userProfile =
+            By.xpath("//span[contains(text(),'Sizwe')]");
 
+    public void clickLoginButton() {
         driver.findElement(loginButton).click();
+    }
+
+    public boolean isUserLoggedIn() {
+        return driver.findElement(userProfile).isDisplayed();
     }
 }
