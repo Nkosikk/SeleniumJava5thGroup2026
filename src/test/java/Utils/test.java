@@ -1,30 +1,33 @@
 package Utils;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
-import org.testng.annotations.Test;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserFactory {
-
     static WebDriver driver;
 
     public static WebDriver launchBrowser(String browserChoice, String url) {
         if (browserChoice.equalsIgnoreCase("ChroMe")) {
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
-            driver = new ChromeDriver(options);
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--headless=new");
+            driver = new ChromeDriver(chromeOptions);
         } else if (browserChoice.equalsIgnoreCase("edge")) {
-            driver = new EdgeDriver();
+            EdgeOptions edgeOptions = new EdgeOptions();
+            edgeOptions.addArguments("--headless=new");
+            driver = new EdgeDriver(edgeOptions);
+            driver.manage().window().setSize(new Dimension(1920, 1080));
         } else {
             driver = new FirefoxDriver();
         }
         driver.manage().window().maximize();
         driver.get(url);
+        driver.manage().window().setSize(new Dimension(1920,1080));
         return driver;
     }
-
 }
